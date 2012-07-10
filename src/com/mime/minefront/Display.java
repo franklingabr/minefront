@@ -9,9 +9,9 @@ import com.mime.minefront.graphics.Screen;
 import com.mime.minefront.input.InputHandler;
 
 public class Display extends Canvas implements Runnable {
-	public static final int WIDTH = 800;
-	public static final int HEIGHT = 600;
-	public static final String TITLE = "Minefront Pre-Alpha 1.0";
+	public static final int WIDTH = 500;
+	public static final int HEIGHT = 300;
+	public static final String TITLE = "Minefront Pre-Alpha 0.2";
 
 	private Thread thread;
 	private Screen screen;
@@ -96,7 +96,7 @@ public class Display extends Canvas implements Runnable {
 	}
 
 	private void tick() {
-		game.tick();
+		game.tick(input.key);
 	}
 
 	private void render() {

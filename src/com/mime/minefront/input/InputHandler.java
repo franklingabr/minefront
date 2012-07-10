@@ -62,7 +62,9 @@ public class InputHandler implements KeyListener, FocusListener, MouseListener, 
 
 	@Override
 	public void focusLost(FocusEvent e) {
-		// TODO Auto-generated method stub
+		for(int i = 0; i < key.length;i++){
+			key[i] = false;
+		}
 		
 	}
 
@@ -82,8 +84,9 @@ public class InputHandler implements KeyListener, FocusListener, MouseListener, 
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		for(int i = 0; i < key.length; i++){
-			key[i] = false;
+		int keyCode = e.getKeyCode();
+		if(keyCode > 0 && keyCode < key.length){
+			key[keyCode] = false;
 		}
 		
 	}
